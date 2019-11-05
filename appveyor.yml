@@ -63,6 +63,7 @@ install:
     - C:\msys64\usr\bin\bash -lc "cmake -DENABLE_TOOLS=OFF -DENABLE_PYTHON=OFF -DENABLE_CSHARP=OFF -G 'Unix Makefiles'../"
     - C:\msys64\usr\bin\bash -lc "make -j all"
     - C:\msys64\usr\bin\bash -lc "make install"
+    
 
 
 build_script:
