@@ -58,8 +58,9 @@ install:
     # Install Inno Setup
     - choco install InnoSetup
 
+    - set PATH=C:\msys64\%MINGW_VERSION%\bin;%PATH%
     - C:\msys64\usr\bin\bash -lc "git clone https://github.com/analogdevicesinc/libm2k.git"
-    - C:\msys64\usr\bin\bash -lc "cd libm2k && mkdir build && cd build && cmake -G 'Unix Makefiles' -DENABLE_TOOLS=OFF -DENABLE_PYTHON=OFF -DENABLE_CSHARP=OFF ../ && make -j all && make install"
+    - C:\msys64\usr\bin\bash -lc "cd libm2k && mkdir build && cd build && cmake -G 'Unix Makefiles' -DENABLE_TOOLS=OFF -DENABLE_PYTHON=OFF -DENABLE_CSHARP=OFF -DCMAKE_C_COMPILER=%ARCH%-w64-mingw32-gcc.exe -DCMAKE_CXX_COMPILER=%ARCH%-w64-mingw32-g++.exe ../ && make -j all && make install"
 
 
 build_script:
