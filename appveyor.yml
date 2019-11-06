@@ -59,11 +59,7 @@ install:
     - choco install InnoSetup
 
     - C:\msys64\usr\bin\bash -lc "git clone https://github.com/analogdevicesinc/libm2k.git"
-    - C:\msys64\usr\bin\bash -lc "cd libm2k && mkdir build && cd build"
-    - C:\msys64\usr\bin\bash -lc "cmake -DENABLE_TOOLS=OFF -DENABLE_PYTHON=OFF -DENABLE_CSHARP=OFF -G 'Unix Makefiles'../"
-    - C:\msys64\usr\bin\bash -lc "make -j all"
-    - C:\msys64\usr\bin\bash -lc "make install"
-    
+    - C:\msys64\usr\bin\bash -lc "cd libm2k && mkdir build && cd build && cmake -G 'Unix Makefiles' -DENABLE_TOOLS=OFF -DENABLE_PYTHON=OFF -DENABLE_CSHARP=OFF ../ && make -j all && make install"
 
 
 build_script:
