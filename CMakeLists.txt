@@ -118,7 +118,7 @@ set(CMAKE_PREFIX_PATH /usr/local/lib/cmake/scopy)
 find_package(gnuradio-scopy)
 
 add_definitions(-DBOOST_ALL_DYN_LINK)
-find_package(Boost "1.53" COMPONENTS system filesystem thread REQUIRED)
+find_package(Boost COMPONENTS system filesystem thread REQUIRED)
 
 set(VC_PATH "$ENV{VS120COMNTOOLS}/../../VC")
 find_library(IIO_LIBRARIES NAMES iio libiio PATHS ${VC_PATH}/lib ${VC_PATH}/lib/amd64)
